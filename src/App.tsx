@@ -30,25 +30,25 @@ function App() {
   //   if (ref.current) ref.current.focus();
   // });
 
-  const connect = () => console.log("connecting");
-  const disconnect = () => console.log("Disconnecting");
+  // const connect = () => console.log("connecting");
+  // const disconnect = () => console.log("Disconnecting");
 
-  useEffect(() => {
-    connect();
+  // useEffect(() => {
+  //   connect();
 
-    // The function passed to the ref hook, can optionally return
-    // a function of cleaning up, this is not necessary, but if we want
-    // to do clean up,this is the way to clean up
-    // Our clean up function should stop or clean up whatever we were doing
-    // ex. if we are fetching some data from a server, our clean up function
-    // should either abort the fetch, or ignore the result
-    return () => disconnect();
-    // react mounts the component on the screen, and unmounts them,
-    // when they are no longer needed
-    // So, strict mode enabled, when react noumts the component on the screen
-    // the second time, first it has to unmount it, that is why
-    // our clean up code is executed i.e disconnect here, when we are running the code here
-  });
+  //   // The function passed to the effect hook, can optionally return
+  //   // a function of cleaning up, this is not necessary, but if we want
+  //   // to do clean up,this is the way to clean up
+  //   // Our clean up function should stop or clean up whatever we were doing
+  //   // ex. if we are fetching some data from a server, our clean up function
+  //   // should either abort the fetch, or ignore the result
+  //   return () => disconnect();
+  //   // react mounts the component on the screen, and unmounts them,
+  //   // when they are no longer needed
+  //   // So, strict mode enabled, when react noumts the component on the screen
+  //   // the second time, first it has to unmount it, that is why
+  //   // our clean up code is executed i.e disconnect here, when we are running the code here
+  // });
 
   return (
     <div>{/* <input ref={ref} type="text" className="form-control" /> */}</div>
