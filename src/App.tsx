@@ -1,5 +1,7 @@
+import ToDoList from "./react-query/ToDoList";
+
 function App() {
-  return <div>Hello World</div>;
+  return <ToDoList />;
 }
 
 export default App;
