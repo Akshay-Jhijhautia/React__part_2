@@ -16,7 +16,8 @@ const usePosts = () => {
         queryFn: () =>
         axios
         .get<Post[]>("https://jsonplaceholder.typicode.com/posts")
-        .then((res) => res.data)
+        .then((res) => res.data),
+        staleTime: 1 * 60 * 1000, //1min
     })
 }
 
