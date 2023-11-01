@@ -9,14 +9,12 @@ interface Todo {
   }
 
 const useTodos = () => {
-    const fetchTodos = () =>
-    axios
-      .get<Todo[]>("https://jsonplaceholder.typicode.com/todos")
-      .then((res) => res.data);
-
+  
     return useQuery<Todo[], Error>({
         queryKey: ["todos"],
-        queryFn: fetchTodos,
+        queryFn: () =>   axios
+        .get<Todo[]>("https://jsonplaceholder.typicode.com/todos")
+        .then((res) => res.data)
         // here these setting are set locally i.e only to this react query, not globally
         // retry: 3,
         // cacheTime: 300_000, //5min

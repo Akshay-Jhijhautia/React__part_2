@@ -10,14 +10,13 @@ interface Post {
 
 
 const usePosts = () => {
-    const fetchPosts = () => 
-        axios
-        .get<Post[]>("https://jsonplaceholder.typicode.com/posts")
-        .then((res) => res.data);
     
     return useQuery<Post[],Error>({
         queryKey: ['posts'],
-        queryFn: fetchPosts,
+        queryFn: () =>
+        axios
+        .get<Post[]>("https://jsonplaceholder.typicode.com/posts")
+        .then((res) => res.data)
     })
 }
 
